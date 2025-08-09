@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Блог-приложение</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<h1>Мой блог</h1>
+
+<!-- Регистрация/Вход -->
+<div id="auth-section">
+  <h2>Войти / Зарегистрироваться</h2>
+  <form id="auth-form">
+    <input type="text" id="username" placeholder="Имя пользователя" required />
+    <input type="password" id="password" placeholder="Пароль" required />
+    <button type="submit" id="auth-btn">Войти</button>
+  </form>
+</div>
+
+<!-- Основной интерфейс -->
+<div id="app" style="display:none;">
+  <button id="logout-btn">Выйти</button>
+  <h2>Создать пост</h2>
+  <form id="post-form">
+    <input type="text" id="post-title" placeholder="Заголовок" required />
+    <textarea id="post-content" placeholder="Текст поста" required></textarea>
+    <input type="text" id="post-tags" placeholder="Теги через запятую" />
+    <label><input type="checkbox" id="secret-post" /> Только по запросу (скрытый)</label>
+    <button type="submit">Опубликовать</button>
+  </form>
+
+  <h2>Ваши посты</h2>
+  <div id="user-posts"></div>
+
+  <h2>Подписки</h2>
+  <form id="subscribe-form">
+    <input type="text" id="subscribe-username" placeholder="Имя пользователя для подписки" required />
+    <button type="submit">Подписаться</button>
+  </form>
+  <div id="subscriptions-list"></div>
+
+  <h2>Публичные посты</h2>
+  <button id="refresh-public-posts">Обновить</button>
+  <div id="public-posts"></div>
+
+  <!-- Комментарии -->
+  <h2>Комментарии</h2>
+  <div id="comments-section"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
